@@ -19,8 +19,10 @@ export const drawResults = (canvas, results) => {
 };
 
 const drawFaceMesh = (ctx, landmarks, width, height) => {
-  // Draw face mesh connections in light green
-  ctx.strokeStyle = '#90EE90'; // Light green
+  // Face mesh line opacity (30%)
+  // Adjust: 0.1 = 10%, 0.2 = 20%, 0.3 = 30%, 0.5 = 50%, 1.0 = 100%
+  const MESH_LINE_OPACITY = 0.3; // 30%
+  ctx.strokeStyle = `rgba(144, 238, 144, ${MESH_LINE_OPACITY})`;
   ctx.lineWidth = 1;
 
   // Draw the mesh connections
@@ -36,8 +38,10 @@ const drawFaceMesh = (ctx, landmarks, width, height) => {
     }
   }
 
-  // Optionally draw face landmark points (small dots)
-  ctx.fillStyle = '#90EE90';
+  // Face dots opacity (25%)
+  // Adjust: 0.1 = 10%, 0.2 = 20%, 0.25 = 25%, 0.5 = 50%, 1.0 = 100%
+  const DOTS_OPACITY = 0.25; // 25%
+  ctx.fillStyle = `rgba(144, 238, 144, ${DOTS_OPACITY})`;
   for (const landmark of landmarks) {
     if (landmark) {
       ctx.beginPath();

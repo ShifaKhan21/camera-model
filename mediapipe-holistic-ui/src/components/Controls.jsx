@@ -1,7 +1,6 @@
 import React from 'react';
 import Timer from './Timer';
 import ExportButton from './ExportButton';
-import './Controls.css';
 
 const Controls = ({ isStreaming, onStart, onStop, elapsedTime, onExport, summariesCount }) => {
   return (
