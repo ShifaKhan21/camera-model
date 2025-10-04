@@ -1,0 +1,248 @@
+.app {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background: #1a1a1a;
+  color: white;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+  color: white;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.status-dot.active {
+  background: #00ff88;
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.5);
+}
+
+.status-dot.inactive {
+  background: #ff4757;
+  box-shadow: 0 0 8px rgba(255, 71, 87, 0.5);
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  padding: 15px 20px;
+}
+
+.control-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 140px;
+  text-transform: none;
+}
+
+.control-btn.start {
+  background: linear-gradient(135deg, #00ff88, #00d4aa);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 255, 136, 0.3);
+}
+
+.control-btn.start:hover {
+  background: linear-gradient(135deg, #00d4aa, #00ff88);
+  box-shadow: 0 6px 16px rgba(0, 255, 136, 0.4);
+}
+
+.control-btn.stop {
+  background: linear-gradient(135deg, #ff4757, #ff3742);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
+}
+
+.control-btn.stop:hover {
+  background: linear-gradient(135deg, #ff3742, #ff4757);
+  box-shadow: 0 6px 16px rgba(255, 71, 87, 0.4);
+}
+
+.analysis-section {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.analysis-section h3 {
+  color: white;
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.analysis-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+  font-size: 0.9rem;
+}
+
+.analysis-table th {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.analysis-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  vertical-align: middle;
+  color: white;
+}
+
+.analysis-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.latest-row {
+  background-color: rgba(0, 255, 136, 0.2) !important;
+  font-weight: 500;
+}
+
+.detection-value {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+
+.smiling {
+  color: #4CAF50;
+}
+
+.upright {
+  color: #4CAF50;
+}
+
+.maintained {
+  color: #4CAF50;
+}
+
+.slouched {
+  color: #f44336;
+}
+
+.not-detected {
+  color: #f44336;
+}
+
+.last-update {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  font-style: italic;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 15px;
+    margin: 5px;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .card-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .analysis-table {
+    font-size: 0.8rem;
+  }
+  
+  .analysis-table th,
+  .analysis-table td {
+    padding: 8px 4px;
+  }
+  
+  .video-container {
+    max-width: 250px;
+    height: 180px;
+  }
+}
