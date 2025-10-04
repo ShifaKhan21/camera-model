@@ -12,7 +12,7 @@ A real-time human behavior analysis application using MediaPipe Holistic for exp
 
 ## Technologies Used
 
-- **React 18** with TypeScript
+- **React 18** with JavaScript (JSX)
 - **MediaPipe Holistic** for pose, face, and hand landmark detection
 - **Vite** for fast development and building
 - **Custom Algorithms** for emotion and posture classification
@@ -85,11 +85,17 @@ npm run dev
 ## Project Structure
 
 ```
-src/
-├── App.tsx          # Main application component
-├── App.css          # Application styles
-├── index.css        # Global styles
-└── main.tsx         # Application entry point
+mediapipe-holistic-ui/        # Frontend application
+├── src/
+│   ├── App.jsx              # Main application component
+│   ├── App.css              # Application styles
+│   ├── index.css            # Global styles
+│   └── main.jsx             # Application entry point
+├── index.html               # HTML template
+├── package.json             # Dependencies
+└── vite.config.js           # Vite configuration
+
+Backend/                      # Backend folder (currently empty)
 ```
 
 ## Browser Compatibility
